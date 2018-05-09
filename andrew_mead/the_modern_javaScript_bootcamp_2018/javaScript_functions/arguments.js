@@ -16,7 +16,9 @@ console.log(scoreText);
 
 // Practice
 let getTip = (total, tipPercent = 0.2) => {
-  return total * tipPercent;
+  // let percent = tipPercent * 100;
+  // let tip = total * tipPercent;
+  return `A ${tipPercent * 100}% tip on $${total} would be $${total * tipPercent}`;
 };
 
 let tip = getTip(100);
