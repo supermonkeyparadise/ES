@@ -1,0 +1,8 @@
+建立物件的兩種方式：
+    1. new keyword        ref: function_consturctor.js
+    
+    2. Object.create()    ref: object_create.js
+       指定 prototype   
+
+繼承範例：
+    inheritance.js
