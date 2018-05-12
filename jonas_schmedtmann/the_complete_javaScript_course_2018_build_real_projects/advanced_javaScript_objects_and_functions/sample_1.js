@@ -1,13 +1,6 @@
-// Function constructor
-
-var john = {
-  name: 'John',
-  yearOfBirth: 1990,
-  job: 'teacher'
-};
-
 /**
- *
+ * [ Function constructor ]
+ * 
  * @param {*} name
  * @param {*} yearOfBirth
  * @param {*} job
@@ -15,9 +8,9 @@ var john = {
  * 補充：
  *     1. 第一個字大寫表示 class
  *     2. 每個物件都有一個 prototype property，它是一個 object
- *     3. __proto__
+ *     3. john.__proto__ === Person.prototype  ===> true
  */
-var Person = function(name, yearOfBirth, job) {
+const Person = function(name, yearOfBirth, job) {
   this.name = name;
   this.yearOfBirth = yearOfBirth;
   this.job;
@@ -29,9 +22,9 @@ Person.prototype.calculateAge = function() {
 
 Person.prototype.lastName = 'Smith';
 
-var john = new Person('John', 1990, 'teacher');
-var jane = new Person('Jane', 1969, 'designer');
-var mark = new Person('Mark', 1948, 'retired');
+const john = new Person('John', 1990, 'teacher');
+const jane = new Person('Jane', 1969, 'designer');
+const mark = new Person('Mark', 1948, 'retired');
 
 john.calculateAge();
 jane.calculateAge();
