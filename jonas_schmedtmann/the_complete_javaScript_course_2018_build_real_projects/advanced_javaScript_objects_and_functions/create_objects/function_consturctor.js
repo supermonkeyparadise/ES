@@ -9,6 +9,8 @@
  *     1. 第一個字大寫表示 class
  *     2. 每個物件都有一個 prototype property，它是一個 object
  *     3. john.__proto__ === Person.prototype  ===> true
+ *     4. __proto__ 由系統建立 (new)
+ *     5. prototype 可自由控制
  */
 const Person = function(name, yearOfBirth, job) {
   this.name = name;
