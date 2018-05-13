@@ -2,7 +2,7 @@
     1. new keyword        ref: function_consturctor.js
     
     2. Object.create()    ref: object_create.js
-       指定 prototype   
+       指定 __proto__   
 
 繼承範例：
     inheritance.js
