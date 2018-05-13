@@ -6,6 +6,7 @@
 // game();
 
 /**
+ *  [ IIFE ]
  *   1. Just for call once
  *   2. 建立一個 new scope，所以變數不會衝突
  *   3. [ Data Privacy ]
