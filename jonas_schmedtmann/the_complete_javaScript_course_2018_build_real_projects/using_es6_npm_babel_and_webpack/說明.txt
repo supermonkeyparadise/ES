@@ -1,0 +1,8 @@
+dist 下的 index.html 是自己建的
+
+/Users/steven/Lab/monkey/ES/jonas_schmedtmann/the_complete_javaScript_course_2018_build_real_projects/using_es6_npm_babel_and_webpack/project_forkify/forkify_starter/dist/index.html
+
+
+快速建立 html template
+    ! + tab
+
