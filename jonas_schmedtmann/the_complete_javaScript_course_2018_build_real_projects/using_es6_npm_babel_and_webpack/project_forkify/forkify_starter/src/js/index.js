@@ -1,19 +1,18 @@
-import str from './models/Search';
+import axios from 'axios';
 
-// import { add as a, multiple, ID } from './views/searchView';
+async function getResult(query) {
+  // enables cross-origin
+  const proxy = 'https://cors-anywhere.herokuapp.com/';
+  const API_KEY = 'e0e8ccd6031b9d2ef50c6d92b66cf703';
+  const API_URL = 'http://food2fork.com/api/search';
 
-import * as searchView from './views/searchView';
-import gg from './views/searchView';
+  try {
+    const res = await axios.get(`${proxy}${API_URL}?key=${API_KEY}&q=${query}`);
+    const recipes = res.data.recipes;
+    console.log('## recipes:', recipes);
+  } catch (err) {
+    console.error(err);
+  }
+}
 
-// console.log(
-//   `Using imported functions! ${a(ID, 8)} and ${multiple(3, 5)}. ${str}`
-// );
-
-console.log(
-  `Using imported functions! ${searchView.add(
-    searchView.ID,
-    8
-  )} and ${searchView.multiple(3, 4)}. ${str}`
-);
-
-console.log(`gg => ${gg}`);
+getResult('pizza');
