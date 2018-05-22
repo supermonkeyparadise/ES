@@ -1,2 +1,2 @@
 console.log('Imported module');
-export default 23; // ES6 SYNTAX
+export default 109; // ES6 SYNTAX
