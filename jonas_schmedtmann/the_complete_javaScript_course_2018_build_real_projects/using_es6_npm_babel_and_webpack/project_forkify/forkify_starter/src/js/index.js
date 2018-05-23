@@ -2,13 +2,13 @@ import Search from './models/Search';
 import * as searchView from './views/searchView';
 import { elements } from './views/base';
 
-/** Global state of the app
+/** 
+ * Global state of the app
  * - Search object
  * - Current recipe object
  * - Shopping list object
- * - Liked recipes
- *
- * 我要讓 state 可以在 console.log 看到
+ * - Liked recipes 
+ * 我要讓他很像 react state
  */
 const state = {};
 window.state = state;
