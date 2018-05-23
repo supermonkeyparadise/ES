@@ -11,6 +11,7 @@ import { elements } from './views/base';
  * 我要讓 state 可以在 console.log 看到
  */
 const state = {};
+window.state = state;
 
 const controlSearch = async () => {
   // 1) Get query from view
