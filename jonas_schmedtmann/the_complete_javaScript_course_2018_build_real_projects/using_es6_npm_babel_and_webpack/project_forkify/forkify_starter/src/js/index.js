@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
 import Search from './models/Search';
+import Recipe from './models/Recipe';
 import * as searchView from './views/searchView';
 import { elements, renderLoder, clearLoader } from './views/base';
 
@@ -10,11 +11,13 @@ import { elements, renderLoder, clearLoader } from './views/base';
  * - Current recipe object
  * - Shopping list object
  * - Liked recipes
- * 我要讓他很像 react state
  */
 const state = {};
 window.state = state;
 
+/**
+ * SEARCH CONTROLLER
+ */
 const controlSearch = async () => {
   // 1) Get query from view
   const query = searchView.getInput();
@@ -50,3 +53,10 @@ elements.searchResPages.on('click', 'button', function(e) {
   searchView.clearResults();
   searchView.renderResults(state.search.result, goToPage);
 });
+
+/**
+ * RECIPE CONTROLLER
+ */
+const r = new Recipe('47746');
+r.getRecipe()
+console.log(r)
