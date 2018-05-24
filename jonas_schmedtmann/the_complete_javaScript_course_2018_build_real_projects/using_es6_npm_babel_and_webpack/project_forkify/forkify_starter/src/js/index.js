@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import Search from './models/Search';
 import * as searchView from './views/searchView';
 import { elements, renderLoder, clearLoader } from './views/base';
@@ -37,7 +39,14 @@ const controlSearch = async () => {
   }
 };
 
-elements.searchForm.on('submit', function(e) {
+elements.searchForm.on('submit', e => {
   e.preventDefault();
   controlSearch();
+});
+
+// CAN NOT USE ARROW FUNCTION
+elements.searchResPages.on('click', 'button', function(e) {
+  const goToPage = parseInt($(this).data('goto'), 10);
+  searchView.clearResults();
+  searchView.renderResults(state.search.result, goToPage);
 });

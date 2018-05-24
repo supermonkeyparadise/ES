@@ -4,7 +4,8 @@ export const elements = {
   searchForm: $('.search'),
   searchInput: $('.search__field'),
   searchResList: $('.results__list'),
-  searchRes: $('.results')
+  searchRes: $('.results'),
+  searchResPages: $('.results__pages')
 };
 
 // 方便修改 class name
