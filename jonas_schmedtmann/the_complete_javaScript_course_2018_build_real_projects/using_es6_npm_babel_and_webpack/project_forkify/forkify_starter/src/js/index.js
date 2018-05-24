@@ -1,13 +1,13 @@
 import Search from './models/Search';
 import * as searchView from './views/searchView';
-import { elements } from './views/base';
+import { elements, renderLoder, clearLoader } from './views/base';
 
-/** 
+/**
  * Global state of the app
  * - Search object
  * - Current recipe object
  * - Shopping list object
- * - Liked recipes 
+ * - Liked recipes
  * 我要讓他很像 react state
  */
 const state = {};
@@ -25,12 +25,14 @@ const controlSearch = async () => {
     // 3) Prepare UI for result
     searchView.clearInput();
     searchView.clearResults();
+    renderLoder(elements.searchRes);
 
     // 4) Search for recipe
     // async function return Promise
     await state.search.getResult();
 
     // 5) render results on UI
+    clearLoader();
     searchView.renderResults(state.search.result);
   }
 };
