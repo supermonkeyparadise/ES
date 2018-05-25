@@ -20,7 +20,7 @@ export default class Recipe {
       this.url = recipe.source_url;
       this.ingredients = recipe.ingredients;
     } catch (err) {
-      console.error(err);
+      alert('Something went wrong :(');
     }
   }
 
