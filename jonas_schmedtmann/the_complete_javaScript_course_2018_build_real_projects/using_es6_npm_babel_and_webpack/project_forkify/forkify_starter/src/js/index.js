@@ -13,6 +13,7 @@ import { elements, renderLoder, clearLoader } from './views/base';
  * - Liked recipes
  */
 const state = {};
+// FOR TESTING
 window.state = state;
 
 /**
@@ -76,6 +77,7 @@ const controlRecipe = async () => {
     try {
       // Get recipe data
       await state.recipe.getRecipe();
+      state.recipe.parseIngredients();
 
       // Calculate servings and time
       state.recipe.calcTime();
