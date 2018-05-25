@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import { elements } from './base';
 
 export const getInput = () => elements.searchInput.val();
@@ -9,6 +11,14 @@ export const clearInput = () => {
 export const clearResults = () => {
   elements.searchResList.empty();
   elements.searchResPages.empty();
+};
+
+export const highlightSelected = id => {
+  $('.results__link').each(function() {
+    $(this).removeClass('results__link--active');
+  });
+
+  $(`a[href="#${id}"]`).addClass('results__link--active');
 };
 
 const limitRecipeTitle = (title, limit = 17) => {
