@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Search from './models/Search';
 import Recipe from './models/Recipe';
 import List from './models/List';
+import Likes from './models/Likes';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
 import * as listView from './views/listView';
@@ -119,16 +120,6 @@ const controlList = () => {
   });
 };
 
-// Handle delete and update list item events
-// elements.shopping.on('click', 'button', function(e) {
-//   const id = $(this)
-//     .closest('.shopping__item')
-//     .data('itemid');
-
-//   state.list.deleteItem(id);
-//   listView.deleteItem(id);
-// });
-
 elements.shopping.on('click', 'li', function(e) {
   const id = $(this).data('itemid');
 
@@ -145,6 +136,29 @@ elements.shopping.on('click', 'li', function(e) {
   }
 });
 
+/**
+ * LIKE CONTROLLER
+ */
+const controlLike = () => {
+  if (!state.likes) state.likes = new Likes();
+
+  const currentID = state.recipe.id;
+
+  if (!state.likes.isLiked(currentID)) {
+    const newLike = state.likes.addLike(
+      currentID,
+      state.recipe.title,
+      state.recipe.author,
+      state.recipe.img
+    );
+
+    console.log('## add state.likes', state.likes);
+  } else {
+    state.likes.deleteLike(currentID);
+    console.log('## del state.likes', state.likes);
+  }
+};
+
 // Handing recipe button clicks
 elements.recipe.on('click', 'button', function() {
   if ($(this).hasClass('btn-decrease')) {
@@ -157,5 +171,7 @@ elements.recipe.on('click', 'button', function() {
     recipeView.updateServingsIngredients(state.recipe);
   } else if ($(this).hasClass('recipe__btn--add')) {
     controlList();
+  } else if ($(this).hasClass('recipe__love')) {
+    controlLike();
   }
 });
