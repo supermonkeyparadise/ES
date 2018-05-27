@@ -5,6 +5,7 @@ import Recipe from './models/Recipe';
 import List from './models/List';
 import * as searchView from './views/searchView';
 import * as recipeView from './views/recipeView';
+import * as listView from './views/listView';
 import { elements, renderLoder, clearLoader } from './views/base';
 
 /**
@@ -104,6 +105,46 @@ const controlRecipe = async () => {
   window.addEventListener(event, controlRecipe)
 );
 
+/**
+ * LIST CONTROLLER
+ */
+const controlList = () => {
+  // Create a new list IF there in none yet
+  if (!state.list) state.list = new List();
+
+  // Add each ingredient to the list and UI
+  state.recipe.ingredients.forEach(el => {
+    const item = state.list.addItem(el.count, el.unit, el.ingredient);
+    listView.renderItem(item);
+  });
+};
+
+// Handle delete and update list item events
+// elements.shopping.on('click', 'button', function(e) {
+//   const id = $(this)
+//     .closest('.shopping__item')
+//     .data('itemid');
+
+//   state.list.deleteItem(id);
+//   listView.deleteItem(id);
+// });
+
+elements.shopping.on('click', 'li', function(e) {
+  const id = $(this).data('itemid');
+
+  if (
+    $(e.target)
+      .parent()
+      .hasClass('shopping__delete')
+  ) {
+    state.list.deleteItem(id);
+    listView.deleteItem(id);
+  } else if ($(e.target).hasClass('shopping__count-value')) {
+    const val = parseFloat($(e.target).val());
+    state.list.updateCount(id, val);
+  }
+});
+
 // Handing recipe button clicks
 elements.recipe.on('click', 'button', function() {
   if ($(this).hasClass('btn-decrease')) {
@@ -114,7 +155,7 @@ elements.recipe.on('click', 'button', function() {
   } else if ($(this).hasClass('btn-increase')) {
     state.recipe.updateServings('inc');
     recipeView.updateServingsIngredients(state.recipe);
+  } else if ($(this).hasClass('recipe__btn--add')) {
+    controlList();
   }
 });
-
-state.list = new List();

@@ -1,3 +1,5 @@
+import $ from 'jquery';
+
 import { elements } from './base';
 
 export const renderItem = item => {
@@ -9,7 +11,7 @@ export const renderItem = item => {
   }" class="shopping__count-value">
             <p>${item.unit}</p>
         </div>
-        <p class="shopping__description">${item.ingredient}/p>
+        <p class="shopping__description">${item.ingredient}</p>
         <button class="shopping__delete btn-tiny">
             <svg>
                 <use href="img/icons.svg#icon-circle-with-cross"></use>
@@ -22,5 +24,9 @@ export const renderItem = item => {
 };
 
 export const deleteItem = id => {
-    
+  //   const item = document.querySelector('[data-itemid]="${id}"');
+  //   item.parentElement.removeChild(item);
+  $('.shopping__item').each(function() {
+    if ($(this).data('itemid') === id) $(this).remove();
+  });
 };
