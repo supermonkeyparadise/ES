@@ -102,3 +102,16 @@ const controlRecipe = async () => {
 ['hashchange', 'load'].forEach(event =>
   window.addEventListener(event, controlRecipe)
 );
+
+// Handing recipe button clicks
+elements.recipe.on('click', 'button', function() {
+  if ($(this).hasClass('btn-decrease')) {
+    if (state.recipe.servings > 1) {
+      state.recipe.updateServings('dec');
+      recipeView.updateServingsIngredients(state.recipe);
+    }
+  } else if ($(this).hasClass('btn-increase')) {
+    state.recipe.updateServings('inc');
+    recipeView.updateServingsIngredients(state.recipe);
+  }
+});
