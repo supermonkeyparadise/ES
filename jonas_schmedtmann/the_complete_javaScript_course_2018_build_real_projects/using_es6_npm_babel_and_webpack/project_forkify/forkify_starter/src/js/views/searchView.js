@@ -18,10 +18,12 @@ export const highlightSelected = id => {
     $(this).removeClass('results__link--active');
   });
 
-  $(`a[href="#${id}"]`).addClass('results__link--active');
+  $('.results__link')
+    .filter(`[href="#${id}"]`)
+    .addClass('results__link--active');
 };
 
-const limitRecipeTitle = (title, limit = 17) => {
+export const limitRecipeTitle = (title, limit = 17) => {
   const newTitle = [];
 
   if (title.length > limit) {
