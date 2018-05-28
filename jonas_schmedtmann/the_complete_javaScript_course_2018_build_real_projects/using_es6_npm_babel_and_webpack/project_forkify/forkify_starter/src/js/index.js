@@ -140,10 +140,6 @@ elements.shopping.on('click', 'li', function(e) {
 /**
  * LIKE CONTROLLER
  */
-// TESTING
-state.likes = new Likes();
-likesView.toogleLikeMenu(state.likes.getNumLikes());
-
 const controlLike = () => {
   if (!state.likes) state.likes = new Likes();
 
@@ -170,6 +166,17 @@ const controlLike = () => {
 
   likesView.toogleLikeMenu(state.likes.getNumLikes());
 };
+
+window.addEventListener('load', () => {
+  state.likes = new Likes();
+  state.likes.readStorage();
+  
+  state.likes.likes.forEach(like => {
+    likesView.renderLike(like);
+  });
+
+  likesView.toogleLikeMenu(state.likes.getNumLikes());
+});
 
 // Handing recipe button clicks
 elements.recipe.on('click', 'button', function() {
