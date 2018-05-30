@@ -24,21 +24,22 @@
     [縮寫]
         babel src/index.js -o public/scripts/bundle.js --presets env
 
-    [自動偵測變更，重新產生 bundle.js]
+    +[自動偵測變更，重新產生 bundle.js]
         babel src/index.js --out-file public/scripts/bundle.js --presets env --watch
 
 
 在 package.json 中的 scripts property 內，增加自行定義的指令：
 
     "scripts": {
+        "serve": "live-server public",
         "build":
         "babel src/index.js --out-file public/scripts/bundle.js --presets env --watch"
     }
 
 
 執行：
-    npm run build
-
+    terminal1: npm run build
+    terminal2: npm run serve
 
 結論：
     轉譯出跟 https://babeljs.io/ 一樣的結果
