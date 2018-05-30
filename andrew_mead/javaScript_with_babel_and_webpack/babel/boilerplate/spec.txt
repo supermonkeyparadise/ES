@@ -1,0 +1,22 @@
+-- 直接使用 Babel 轉譯程式 --
+   備註：未整合進 Webpack 中
+
+
+安裝 Library：
+    已經在 global 安裝 babel
+        npm install -g babel-cli
+
+    babel-preset-env 安裝在 local
+        npm install babel-preset-env --save-dev
+
+
+轉譯指令：
+    babel input.js --out-file output.js --presets env  (說明：env ===> babel-preset-env)
+    or
+    [縮寫]
+    babel input.js -o output.js --presets env
+
+
+結論：
+    轉譯出跟 https://babeljs.io/ 一樣的結果
+

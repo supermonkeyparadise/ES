@@ -8,16 +8,16 @@ var name = 'Jen';
 console.log(name);
 
 var Hangman = function () {
-    function Hangman() {
-        _classCallCheck(this, Hangman);
+  function Hangman() {
+    _classCallCheck(this, Hangman);
+  }
+
+  _createClass(Hangman, [{
+    key: 'myMethod',
+    value: function myMethod() {
+      return 'Testing';
     }
+  }]);
 
-    _createClass(Hangman, [{
-        key: 'myMethod',
-        value: function myMethod() {
-            return 'Testing';
-        }
-    }]);
-
-    return Hangman;
+  return Hangman;
 }();

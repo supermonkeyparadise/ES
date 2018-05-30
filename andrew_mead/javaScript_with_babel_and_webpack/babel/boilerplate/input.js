@@ -1,8 +1,8 @@
-const name = 'Jen'
-console.log(name)
+const name = 'Jen';
+console.log(name);
 
 class Hangman {
-    myMethod() {
-        return 'Testing'
-    }
+  myMethod() {
+    return 'Testing';
+  }
 }
