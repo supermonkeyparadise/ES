@@ -4,16 +4,17 @@
 目的：
     1. 在 package.json 寫 scripts，以方便執行轉譯指令
     2. 偵測檔案變動時，自動重建 bundle.js
+    3. ＊＊ 避免安裝 global modules＊＊  ===> 因為別人無法使用 npm install 安裝 global 的 Library     
+
+       安裝在 global ===> 可以直接在 comand line 執行
+       安裝在 local ===> 只能透過 npm script 執行
+
 
 安裝 Library：
-    已經在 global 安裝 babel
-        npm install -g babel-cli
+    npm install babel-cli --save-dev
+    npm install babel-preset-env --save-dev
+    npm install live-server --save-dev
 
-    babel-preset-env 安裝在 local
-        npm install babel-preset-env --save-dev
-
-    live-server
-        npm install -g live-server
 
 轉譯指令：
     babel src/index.js --out-file public/scripts/bundle.js --presets env  (說明：env ===> babel-preset-env)
@@ -31,7 +32,7 @@
 
     "scripts": {
         "build":
-        "babel src/index.js --out-file public/scripts/bundle.js --presets env"
+        "babel src/index.js --out-file public/scripts/bundle.js --presets env --watch"
     }
 
 
