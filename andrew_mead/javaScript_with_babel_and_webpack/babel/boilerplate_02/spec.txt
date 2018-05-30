@@ -1,0 +1,44 @@
+-- 直接使用 Babel 轉譯程式 --
+   備註：未整合進 Webpack 中
+
+目的：
+    1. 在 package.json 寫 scripts，以方便執行轉譯指令
+    2. 偵測檔案變動時，自動重建 bundle.js
+
+安裝 Library：
+    已經在 global 安裝 babel
+        npm install -g babel-cli
+
+    babel-preset-env 安裝在 local
+        npm install babel-preset-env --save-dev
+
+    live-server
+        npm install -g live-server
+
+轉譯指令：
+    babel src/index.js --out-file public/scripts/bundle.js --presets env  (說明：env ===> babel-preset-env)
+
+    or
+
+    [縮寫]
+        babel src/index.js -o public/scripts/bundle.js --presets env
+
+    [自動偵測變更，重新產生 bundle.js]
+        babel src/index.js --out-file public/scripts/bundle.js --presets env --watch
+
+
+在 package.json 中的 scripts property 內，增加自行定義的指令：
+
+    "scripts": {
+        "build":
+        "babel src/index.js --out-file public/scripts/bundle.js --presets env"
+    }
+
+
+執行：
+    npm run build
+
+
+結論：
+    轉譯出跟 https://babeljs.io/ 一樣的結果
+
