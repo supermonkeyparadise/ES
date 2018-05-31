@@ -2,7 +2,7 @@ import utilities, { add, sub, name } from './utilities_1';
 import utilities2, * as util2 from './utilities_2';
 import * as sc from './scream';
 
-console.log('## index.js??!!');
+console.log('## index.js');
 
 // use utilities_1 Module
 utilities();

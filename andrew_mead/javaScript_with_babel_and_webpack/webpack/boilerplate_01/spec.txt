@@ -22,4 +22,17 @@ Local development workflow
 
     使用 webpack-dev-server 不會產生實際的 bundle.js，而是存到記憶體裡
 
+scripts 組合
+    [solution 1]
+    terminal1: live-server   +   terminal2: build_old
+    說明：live-server 讀取 webpack 產生的未壓縮 bundle.js 實體檔案
+
+    [solution 2] 最快，但沒有彈性
+    terminal1: dev-server
+    說明：等於 live-server + build_old，但不會產生實體檔案，webpack-dev-server
+         直接讀取記憶體資料
+
+    terminal1: build
+    說明：產生壓縮過的 bundle.js
+
     

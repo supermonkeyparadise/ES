@@ -2,13 +2,10 @@
   "name": "boilerplate",
   "version": "1.0.0",
   "description": "",
-  "main": "input.js",
+  "main": "index.js",
   "scripts": {
-    "serve_old": "live-server public",
-    "webpack_old": "webpack",
-    "build_old":
-      "babel src/index.js --out-file public/scripts/bundle.js --presets env --watch",
-    "build_": "webpack --watch",
+    "live-server": "live-server public",
+    "build_old": "webpack --mode development --watch",
     "dev-server": "webpack-dev-server --mode development",
     "build": "webpack --mode production"
   },
