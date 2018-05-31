@@ -1,10 +1,11 @@
-const name = 'Mike'
-console.log(name)
+import utilities, { add, sub, name } from './utilities';
+import * as sc from './scream';
 
-class Hangman {
-    myMethod() {
-        return 'Testing'
-    }
-}
-const hangman = new Hangman()
-console.log(hangman.myMethod())
+console.log('## index.js');
+
+utilities();
+console.log(add(1, 2));
+console.log(sub(3, 2));
+console.log(name);
+
+console.log(sc.scream('Woooo...!!'));
