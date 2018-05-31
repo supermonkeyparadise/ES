@@ -8,8 +8,9 @@
     "webpack_old": "webpack",
     "build_old":
       "babel src/index.js --out-file public/scripts/bundle.js --presets env --watch",
-    "build": "webpack --watch",
-    "dev-server": "webpack-dev-server"
+    "build_": "webpack --watch",
+    "dev-server": "webpack-dev-server --mode development",
+    "build": "webpack --mode production"
   },
   "author": "",
   "license": "ISC",
