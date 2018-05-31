@@ -1,0 +1,25 @@
+webpack loader
+ allow us to customize what happens when webpack loads file with its module system.
+
+Local development workflow
+    browser auto fresh!!
+
+    we configured babel to watch our files for changes and rerun babel when
+    any of the files changed
+
+    --watch ===> 偵測 index.js 相依的檔案的變更，當發生變更，重新建立 bundle.js
+
+
+    webpack-dev-server ===> serve + build
+     scripts
+        [ webpack.config.js ]
+        devServer: {
+            contentBase: path.resolve(__dirname, 'public'),
+            publicPath: '/scripts/'   ===> assets 存放的地方(webpack 產生的 bundle.js)
+        }
+
+    npm run dev-server
+
+    使用 webpack-dev-server 不會產生實際的 bundle.js，而是存到記憶體裡
+
+    
