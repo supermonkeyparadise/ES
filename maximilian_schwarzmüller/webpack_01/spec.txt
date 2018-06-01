@@ -1,0 +1,3 @@
+使用 yarn 替代 npm
+
+建立一個簡單的 react app without create-react-app
