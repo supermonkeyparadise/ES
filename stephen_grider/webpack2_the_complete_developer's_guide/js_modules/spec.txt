@@ -26,3 +26,9 @@ yarn add --dev babel-loader babel-core babel-preset-env
 yarn add --dev style-loader css-loader
 
 use: ['style-loader', 'css-loader']   // 順序很重要
+
+[css] 將 css 整合在 bundle.js 內
+    How did webpack somehow modify the HTML structure of our document?
+        bundle.js 裡面動態插入 style tag
+
+[css] 一個分開的 css 檔案
