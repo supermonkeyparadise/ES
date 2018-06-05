@@ -17,13 +17,15 @@ scripts
 
 -------------------------------------------------------------------
 
-yarn add --dev babel-loader babel-core babel-preset-env
+安裝：
+    yarn add --dev babel-loader babel-core babel-preset-env
 
 建立 .babelrc
 
 -------------------------------------------------------------------
 
-yarn add --dev style-loader css-loader
+安裝：
+    yarn add --dev style-loader css-loader
 
 use: ['style-loader', 'css-loader']   // 順序很重要
 
@@ -31,4 +33,10 @@ use: ['style-loader', 'css-loader']   // 順序很重要
     How did webpack somehow modify the HTML structure of our document?
         bundle.js 裡面動態插入 style tag
 
-[css] 一個分開的 css 檔案
+         it endup injecting all of our css  into a style tag in the html document itself.
+
+[css] 將所以由 css-loader 載入的 css ，儲存到指定的 css 檔案，藉此將 js(bundle.js) 與 css 檔案分開
+    loading css in a separate file is a lot faster than loading up all our javascript and css
+    in a single file.
+
+    yarn add --dev extract-text-webpack-plugin@2.0.0-beta.4
