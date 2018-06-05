@@ -21,5 +21,8 @@ yarn add --dev babel-loader babel-core babel-preset-env
 
 建立 .babelrc
 
+-------------------------------------------------------------------
 
+yarn add --dev style-loader css-loader
 
+use: ['style-loader', 'css-loader']   // 順序很重要
