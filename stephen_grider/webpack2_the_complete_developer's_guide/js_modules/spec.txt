@@ -4,4 +4,16 @@ webpack 是執行在 node 的環境中
 
 使用 node js 的 path module，使路徑可以跨平台(windows or MAC OS or Linux)
 path: 必須為絕對路徑
+__dirname:  取得當前目錄
 
+scripts
+    local 安裝，只能使用 scripts 來執行
+
+
+執行 webpack
+    yarn run build
+
+    ps: 產生未壓縮的 bundle.js
+
+
+    
