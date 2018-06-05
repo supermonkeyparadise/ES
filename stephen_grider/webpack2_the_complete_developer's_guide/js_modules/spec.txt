@@ -55,6 +55,9 @@ scripts
         可以設定將小的 img 檔，寫到 bundle.js 裡(encoded by base64)
         將大的檔案複製到 build folder 下
 
+    publicPath property right here is not only used by the URL loader
 
+-------------------------------------------------------------------
+[ code splitting ]
 
-
+    
