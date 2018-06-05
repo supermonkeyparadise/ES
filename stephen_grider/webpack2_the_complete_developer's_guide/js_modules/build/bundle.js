@@ -68,22 +68,28 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-const sum = (a, b) => a + b;
+"use strict";
+
+
+var sum = function sum(a, b) {
+  return a + b;
+};
 
 module.exports = sum;
-
 
 /***/ },
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-const sum = __webpack_require__(0);
+"use strict";
 
-const total = sum(1, 2);
+
+var sum = __webpack_require__(0);
+
+var total = sum(1, 2);
 console.log(total);
-
 
 /***/ }
 /******/ ]);

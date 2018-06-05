@@ -15,5 +15,7 @@ scripts
 
     ps: 產生未壓縮的 bundle.js
 
+-------------------------------------------------------------------
 
-    
+yarn add --dev babel-loader babel-core babel-preset-env
+
