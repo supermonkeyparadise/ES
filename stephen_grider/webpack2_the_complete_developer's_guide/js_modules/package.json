@@ -2,5 +2,8 @@
   "name": "js_modules",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "2.2.0-rc.0"
+  }
 }
