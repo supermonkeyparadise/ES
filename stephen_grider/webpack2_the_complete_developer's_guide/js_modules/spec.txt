@@ -46,8 +46,15 @@ scripts
 -------------------------------------------------------------------
 [ 處理 image ]
 
+    MAC OS 安裝: brew install libpng
+
     安裝：
-        yarn add --dev image-webpack-loader url-loader
+        yarn add --dev image-webpack-loader url-loader file-loader
+
+    url-loader
+        可以設定將小的 img 檔，寫到 bundle.js 裡(encoded by base64)
+        將大的檔案複製到 build folder 下
+
 
 
 
