@@ -19,3 +19,7 @@ scripts
 
 yarn add --dev babel-loader babel-core babel-preset-env
 
+建立 .babelrc
+
+
+
