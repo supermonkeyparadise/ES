@@ -5,6 +5,6 @@ const webpackConfig = require('./webpack.config.js');
 
 const app = express();
 // 偵測 request
- app.use(webpackMiddleware(webpack(webpackConfig)));
+app.use(webpackMiddleware(webpack(webpackConfig)));
 
 app.listen(3050, () => console.log('Listening'));
