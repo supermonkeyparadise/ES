@@ -9,7 +9,8 @@ import Routes from './router';
 import '../style/materialize.css';
 import '../style/react-range.css';
 import '../style/style.css';
-console.log('hi3')
+console.log('## env:', test123);
+console.log('## process.env.NODE_ENV:', process.env.NODE_ENV);
 const App = () => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 

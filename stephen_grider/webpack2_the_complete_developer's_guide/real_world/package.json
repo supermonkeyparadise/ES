@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "yarn run clean && webpack",
+    "build": "NODE_ENV=production yarn run clean && webpack -p",
     "serve": "webpack-dev-server --open"
   },
   "repository": "",
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.3",
     "faker": "^3.1.0",
     "lodash": "^4.17.2",
     "react": "15.4.1",

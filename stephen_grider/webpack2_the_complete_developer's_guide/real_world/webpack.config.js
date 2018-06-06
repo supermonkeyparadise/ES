@@ -46,6 +46,11 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: 'src/index.html'
+    }),
+    new webpack.DefinePlugin({
+      // 存在於 webpack 的變數
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+      'test123': JSON.stringify('help you')
     })
   ]
 };
