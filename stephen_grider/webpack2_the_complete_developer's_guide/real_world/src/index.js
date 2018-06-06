@@ -9,7 +9,7 @@ import Routes from './router';
 import '../style/materialize.css';
 import '../style/react-range.css';
 import '../style/style.css';
-console.log('hi1')
+console.log('hi3')
 const App = () => {
   const store = createStore(reducers, {}, applyMiddleware(ReduxThunk));
 

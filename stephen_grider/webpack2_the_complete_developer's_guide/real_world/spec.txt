@@ -23,3 +23,6 @@ HtmlWebpackPlugin
    好像會越來越多
 
 7. rimraf ===> 可以跨平台執行 command
+
+8. webpack-dev-server [only for development][ 不會產生實體檔案，直接寫到記憶體中 ] 史上無敵快💪
+   如果變更 webpack.config.js 要重新啟動 webpack-dev-server 
