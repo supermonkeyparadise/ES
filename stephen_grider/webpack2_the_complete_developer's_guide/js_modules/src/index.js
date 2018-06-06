@@ -10,7 +10,7 @@ button.innerText = 'Click me';
 button.onclick = () => {
   // return promise
   System.import('./image_viewer').then(module => {
-    console.log(module);
+    module.default();
   });
 };
 
