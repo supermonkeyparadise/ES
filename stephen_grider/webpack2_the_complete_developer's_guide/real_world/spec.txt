@@ -3,5 +3,8 @@
 2. 在 webpack.config.js 設定 babel
    排除 node_modules，因為裡面的 library 已經被轉換為 ES5，所以不要浪費資源
 
+3. babel-preset-env ===> ES6 ES7 TO ES5，但不知道怎麼轉換 JSX
+   babel-preset-react ===> JSX TO ES5
 
-
+4. yarn run build
+   如何最小化 bundle.js 
