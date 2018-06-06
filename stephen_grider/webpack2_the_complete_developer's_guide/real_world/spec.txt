@@ -1,0 +1,7 @@
+1. 使用 yarn 安裝相依的 library
+
+2. 在 webpack.config.js 設定 babel
+   排除 node_modules，因為裡面的 library 已經被轉換為 ES5，所以不要浪費資源
+
+
+
