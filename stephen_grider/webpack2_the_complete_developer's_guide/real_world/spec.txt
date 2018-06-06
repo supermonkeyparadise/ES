@@ -6,5 +6,5 @@
 3. babel-preset-env ===> ES6 ES7 TO ES5，但不知道怎麼轉換 JSX
    babel-preset-react ===> JSX TO ES5
 
-4. yarn run build
+4. 使用 yarn run build 來產生 bundle.js 和 vendor.js
    如何最小化 bundle.js 
