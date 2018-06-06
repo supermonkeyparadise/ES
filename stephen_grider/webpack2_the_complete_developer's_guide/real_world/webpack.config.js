@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // 實際 package.json 內的 libs，但不一定要包含全部，依實際情況而定
 const VENDOR_LIBS = [
@@ -22,7 +23,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js' // 依據 entry 內的 key 值，動態產生的檔名
+    filename: '[name].[chunkhash].js' // 依據 entry 內的 key 值，動態產生的檔名
   },
   module: {
     rules: [
@@ -39,7 +40,12 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor' // bundle.js 與 vendor.js 內有重複的 lib 都移到 vendor.js
+      // bundle.js 與 vendor.js 內有重複的 lib 都移到 vendor.js
+      // mainfest.js 是要告訴 browser vendor.js 到底有沒有變更
+      names: ['vendor', 'mainfest']
+    }),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
     })
   ]
 };

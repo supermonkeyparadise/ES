@@ -8,3 +8,18 @@
 
 4. 使用 yarn run build 來產生 bundle.js 和 vendor.js
    如何最小化 bundle.js 
+
+webpack.optimize.CommonsChunkPlugin
+
+HtmlWebpackPlugin
+
+***
+ vendor.js 是要放不常變更的 lib，因為要利用 browser 的快取
+
+5. 如果 js 的 name 沒有改變的話，就會被 cache，browser 自動 cache
+   所以可以用 hashcode 解
+
+6. 如果檔案有變更的話，每 build 一次，就會在 dist 目錄下，產生檔案
+   好像會越來越多
+
+7. rimraf ===> 可以跨平台執行 command
