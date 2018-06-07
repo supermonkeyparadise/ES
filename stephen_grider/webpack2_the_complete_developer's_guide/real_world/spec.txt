@@ -31,4 +31,8 @@ HtmlWebpackPlugin
 9. development-based or production-based
    -p ===> production 壓縮檔案
 
-   
+   development env ===>  透過 webpackMiddleware 找到存在記憶體中的 assets 
+
+   ** 設定為 production 的執行環境 **
+      NODE_ENV=production node server.js
+

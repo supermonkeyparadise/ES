@@ -45,7 +45,8 @@ module.exports = {
       names: ['vendor', 'mainfest']
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.html'
+      template: 'src/index.html',
+      filename:'index001.html'
     }),
     new webpack.DefinePlugin({
       // 存在於 webpack 的變數
